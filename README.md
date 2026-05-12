@@ -1,55 +1,146 @@
-# Traffic Sign Recognition with TensorFlow
+# Traffic Sign Detection & Classification using CNN
 
-## Overview
+A deep learning based Traffic Sign Detection and Classification system built using CNN, TensorFlow, and OpenCV.  
+The model is trained on the German Traffic Sign Recognition Benchmark (GTSRB) dataset containing 43 traffic sign classes.
 
-This project implements a neural network using TensorFlow to classify images of traffic signs from the German Traffic Sign Recognition Benchmark (GTSRB) dataset. The model accurately identifies different types of traffic signs, such as stop signs, speed limit signs, and yield signs, among others.
+---
 
-## Getting Started
+## Project Overview
 
-To begin, ensure you have Python 3.12 installed, as specified for compatibility with TensorFlow. Follow these steps to set up the project:
+This project uses Convolutional Neural Networks (CNN) to classify traffic signs from images.  
+The system performs image preprocessing, augmentation, training, and prediction to accurately recognize traffic signs in real time.
 
-1. **Clone the repo**: `git clone https://github.com/musty-ess/Traffic-Sign-Recognition-with-TensorFlow-AI.git`
+---
 
-2. **Download the GTSRB dataset in this directory**: `https://cdn.cs50.net/ai/2020/x/projects/5/gtsrb.zip`
+## Features
 
-3. **Install Dependencies**:
-   Navigate to the `traffic` directory and run: `pip install -r requirements.txt`
+- Traffic Sign Classification using CNN
+- GTSRB Dataset (43 Classes)
+- Image Preprocessing & Augmentation
+- Model Training using TensorFlow/Keras
+- Real-time Prediction Support
+- Accuracy & Loss Visualization
+- Confusion Matrix Evaluation
+- OpenCV Integration
 
-   This installs necessary dependencies like `OpenCV-Python` for image processing, `scikit-learn` for machine learning functions, and `TensorFlow` for neural networks.
+---
 
-4. **Run the program**: `python traffic.py gtsrb [name_of_model.h5]`
+## Technologies Used
 
+- Python
+- TensorFlow
+- Keras
+- OpenCV
+- NumPy
+- Pandas
+- Matplotlib
+- Scikit-learn
 
+---
 
-## Implementation Details
+## Dataset
 
-### `traffic.py`
+Dataset Used:
+German Traffic Sign Recognition Benchmark (GTSRB)
 
-The core of the project resides in `traffic.py`, where we implement two key functions:
+- Total Classes: 43
+- Image-based Traffic Sign Dataset
+- Publicly available for research purposes
 
-- **`load_data(data_dir)`**: This function loads the image data and corresponding labels from the specified `data_dir`. Each image is resized to a standard size (`IMG_WIDTH x IMG_HEIGHT`) using OpenCV-Python (`cv2`) and converted into a numpy array. It returns two lists: `images` containing the image arrays and `labels` containing the integer category for each image.
+---
 
-- **`get_model()`**: This function builds and compiles a neural network model using TensorFlow's Keras API. The model architecture is customizable, allowing experimentation with various configurations of convolutional and pooling layers, hidden layers, and dropout to optimize accuracy.
+## Model Architecture
 
-### Training and Evaluation
+The CNN model includes:
 
-Once the data is loaded and the model is built, `traffic.py` trains the model on the training set and evaluates its performance on the testing set. The training progress, including loss and accuracy metrics for each epoch, is displayed.
+- Convolution Layers
+- MaxPooling Layers
+- Dropout Layers
+- Fully Connected Dense Layers
+- Softmax Activation
 
-## Experimentation
+---
 
-Throughout the project, experimentation with different model architectures and hyperparameters is encouraged. You can modify `get_model()` to explore:
+## Project Structure
 
-- Different numbers of convolutional and pooling layers.
-- Varying sizes and numbers of filters in convolutional layers.
-- Various configurations of hidden layers and dropout rates.
+```bash
+Traffic-Sign-Detection-Classification-Using-CNN/
+│
+├── dataset/
+├── model/
+├── train.py
+├── predict.py
+├── requirements.txt
+├── README.md
+└── output/
+```
 
-### Observations
+---
 
-During experimentation, observe the effects of these changes on training time, convergence, and model accuracy. Document what configurations yield the best results and any challenges encountered in achieving optimal performance.
+## Installation
 
-## Conclusion
+Clone the repository:
 
-Building a traffic sign recognition system involves leveraging TensorFlow's capabilities to create and train neural networks. By experimenting with different architectures and configurations, we aim to improve the model's accuracy in identifying traffic signs, contributing to advancements in computer vision for autonomous vehicles.
+```bash
+git clone https://github.com/Shubhoo22/Traffic-Sign-Detection-Classification-Using-CNN.git
+```
 
-## Acknowledgements
-Data provided by J. Stallkamp, M. Schlipsing, J. Salmen, and C. Igel. The German Traffic Sign Recognition Benchmark: A multi-class classification competition. In Proceedings of the IEEE International Joint Conference on Neural Networks, pages 1453–1460. 2011
+Move into the project directory:
+
+```bash
+cd Traffic-Sign-Detection-Classification-Using-CNN
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Run the Project
+
+Train the model:
+
+```bash
+python train.py
+```
+
+Run prediction:
+
+```bash
+python predict.py
+```
+
+---
+
+## Results
+
+- Achieved approximately 95% classification accuracy
+- Improved model generalization using data augmentation
+- Evaluated using confusion matrix and accuracy/loss curves
+
+---
+
+## Future Improvements
+
+- Real-time webcam traffic sign detection
+- Streamlit/Flask web deployment
+- Transfer Learning using ResNet/MobileNet
+- Model optimization for edge devices
+
+---
+
+## Author
+
+Subham Mondal
+
+GitHub:
+https://github.com/Shubhoo22
+
+---
+
+## License
+
+This project is intended for educational and learning purposes.
